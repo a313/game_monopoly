@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:game_monopoly/share_widget/game_button.dart';
+import 'package:game_monopoly/game_monopoly.dart';
+
+import 'test_game_scene.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,19 +23,40 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Plugin example app'),
-          ),
-          body: Stack(
-            children: [
-              GameButton.yellow(
-                title: "Yellow",
-                style: TextStyle(),
-              )
-            ],
-          )),
+    return const MaterialApp(
+      home: Main(),
+    );
+  }
+}
+
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Column(
+          children: [
+            TextButton.icon(
+                onPressed: () => onPlay(context),
+                icon: const Icon(Icons.graphic_eq),
+                label: const Text("ABC")),
+            MenuComponent(
+              onPlay: () => onPlay(context),
+            ),
+            // MenuBackground(),
+            // GamePlay(),
+          ],
+        ));
+  }
+
+  onPlay(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const TestGameScene()),
     );
   }
 }

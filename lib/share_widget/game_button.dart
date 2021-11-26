@@ -37,6 +37,7 @@ class GameButton extends StatelessWidget {
       style: style,
       width: width,
       height: height,
+      onTap: onTap,
     );
   }
 
@@ -56,6 +57,7 @@ class GameButton extends StatelessWidget {
       style: style,
       width: width,
       height: height,
+      onTap: onTap,
     );
   }
 

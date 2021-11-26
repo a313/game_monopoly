@@ -1,8 +1,11 @@
+import 'package:flame/assets.dart';
 import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:game_monopoly/base/knows_game_size.dart';
+import 'package:game_monopoly/game_monopoly.dart';
+
+import '../util.dart';
 
 class MenuBackground extends StatelessWidget {
   const MenuBackground({Key? key}) : super(key: key);
@@ -19,7 +22,8 @@ class _MenuBackground extends BaseGame {
   @override
   Future<void> onLoad() async {
     if (!_isAlreadyLoaded) {
-      await Flame.images.loadAll(["charactor/jump.png", "charactor/idle.png"]);
+      await Monopoly.images
+          .loadAll(["btn_green.png", "actor/idle.png", "actor/jump.png"]);
 
       _isAlreadyLoaded = true;
     }

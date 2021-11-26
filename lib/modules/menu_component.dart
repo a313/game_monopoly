@@ -29,7 +29,8 @@ class MenuComponent extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  "assets/images/mini_game/ic_play.png",
+                  "assets/images/ic_play.png",
+                  package: "game_monopoly",
                   width: 24,
                   height: 24,
                 ),
@@ -55,10 +56,11 @@ class MenuComponent extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(
-                  "assets/images/mini_game/ic_share.png",
+                const Image(
                   width: 18,
                   height: 18,
+                  image: AssetImage("assets/images/ic_share.png",
+                      package: "game_monopoly"),
                 ),
                 const SizedBox(width: 12),
                 Text(
@@ -82,11 +84,11 @@ class MenuComponent extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(
-                  "assets/images/mini_game/ic_rank.png",
-                  width: 18,
-                  height: 18,
-                ),
+                // Image.asset(
+                //   "assets/images/ic_rank.png",
+                //   width: 18,
+                //   height: 18,
+                // ),
                 12.width,
                 Text(
                   "Bảng Xếp Hạng",
@@ -109,11 +111,11 @@ class MenuComponent extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(
-                  "assets/images/mini_game/ic_help.png",
-                  width: 18,
-                  height: 18,
-                ),
+                // Image.asset(
+                //   "assets/images/ic_help.png",
+                //   width: 18,
+                //   height: 18,
+                // ),
                 const SizedBox(width: 12),
                 Text(
                   "Hướng dẫn",
